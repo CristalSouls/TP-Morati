@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+
+<head>
+    <script>
+        window.onload = function () {
+            const config = {
+                id: 'gauge-container',
+                "value": 130,
+                "min": 0,
+                "max": 250,
+                "decimals": 0,
+                "symbol": " KM",
+                "reverse": false,
+                "width": 400,
+                "height": 320,
+                "relativeGaugeSize": false,
+                "gaugeWidthScale": 1,
+                "gaugeColor": "#edebeb",
+                "valueFontColor": "#010101",
+                "labelFontColor": "#b3b3b3",
+                "levelColors": [
+                    "#a9d70b",
+                    "#f9c802",
+                    "#ff0000"
+                ],
+                "noGradient": true,
+                "showSectorColors": true,
+                "customSectors": {
+                    "percents": false,
+                    "ranges": [
+                        {
+                            "lo": 0,
+                            "hi": 50,
+                            "color": "#a9d70b"
+                        },
+                        {
+                            "lo": 50,
+                            "hi": 150,
+                            "color": "#f9c802"
+                        },
+                        {
+                            "lo": 150,
+                            "hi": 250,
+                            "color": "#ff0000"
+                        }
+                    ]
+                },
+                "title": "Vitesse",
+                "titleFontColor": "#010101",
+                "titleFontFamily": "Arial",
+                "titleFontWeight": "bold",
+                "titlePosition": "above",
+                "label": "",
+                "minTxt": "",
+                "maxTxt": "",
+                "hideValue": false,
+                "hideMinMax": false,
+                "humanFriendly": false,
+                "formatNumber": false,
+                "donut": false,
+                "donutStartAngle": 90,
+                "differential": false,
+                "displayRemaining": false,
+                "pointer": true,
+                "pointerOptions": {
+                    "color": "#8e2de2",
+                    "toplength": 16,
+                    "bottomlength": 27,
+                    "bottomwidth": 4
+                },
+                "targetLine": null,
+                "targetLineColor": "#000000",
+                "targetLineWidth": 1.5,
+                "startAnimationTime": 1197.465440626109,
+                "startAnimationType": ">",
+                "refreshAnimationTime": 700,
+                "counter": false,
+                "showInnerShadow": false,
+                "shadowOpacity": 0.2,
+                "shadowSize": 5,
+                "shadowVerticalOffset": 3
+            };
+
+            const gauge = new JustGage(config);
+            const slider = document.querySelector("#slidertest")
+
+            slider.addEventListener("input", () => {
+                gauge.refresh(slider.value);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div id="gauge-container" style="width: 400px; height: 320px;"></div>
+    <input id="slidertest" type="range" min="0" max="250">
+    <script src="https://unpkg.com/justgage@latest/dist/justgage.umd.js"></script>
+</body>
+
+</html>

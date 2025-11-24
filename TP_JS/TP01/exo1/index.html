@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<title>Exercice de découverte : Javascript</title>
+	<script type="text/javascript">
+		function message()
+		{
+			var texte = "Texte Saisi : ";
+			texte = texte + document.nameMonFormulaire.SaisieMessage.value;
+			alert(texte);
+			
+			// "Effacement" de la zone de saisie
+			document.nameMonFormulaire.SaisieMessage.value="";
+		}
+		function rougir() 
+		{ 
+			document.getElementById("cube").src="./img/cube_rouge.gif" ;
+			alert("fonction appelée lors du passage sur l'image");
+		} 
+	
+		function verdir() 
+		{ 
+			document.getElementById("cube").src="./img/cube_vert.gif";
+		} 
+	</script>
+</head>
+<body>
+<p>Passer la souris devant le cube</p>
+
+<img id="cube" src="./img/cube_vert.gif"  onmouseover="rougir()" onmouseout="verdir()"  alt="Cube"/>
+<p>&nbsp;</p>
+<form method="post" name="nameMonFormulaire" id="monFormulaire">
+  Message
+  <input name="SaisieMessage" type="text" />
+  <input name="button" type="button" onClick="message()" value="Afficher" />
+</form>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,1 @@
+let nb = prompt("Somme jusqu'a :");

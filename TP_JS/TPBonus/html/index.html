@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='fr'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css' rel='stylesheet'
+        integrity='sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB' crossorigin='anonymous'>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css' rel='stylesheet'
+        integrity='sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB' crossorigin='anonymous'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Polar Graphique</title>
+</head>
+
+<body>
+    
+    <div class="card-body" style="width: 700px; margin: 0 auto;">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+        window.onload = function () {
+            const ctx = document.getElementById('myChart');
+
+            const data = {
+                labels: [
+                    'Albi',
+                    'Gaillac',
+                    'Salvagnac',
+                    'Toulouse'
+                ],
+                datasets: [{
+                    label: 'Habitant',
+                    data: [20, 2, 16, 5],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)',
+                        'rgba(75, 192, 192, 0.5)',
+                        'rgba(255, 205, 86, 0.5)',
+                        'rgba(201, 203, 207, 0.5)',
+                        'rgba(54, 162, 235, 0.5)'
+                    ]
+                }]
+            };
+
+            new Chart(ctx, {
+                type: 'polarArea',
+                data: data,
+                options: {
+                    
+                }
+            });
+
+
+        } 
+    </script>
+</body>
+
+</html>

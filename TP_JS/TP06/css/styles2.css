@@ -1,0 +1,103 @@
+/* Import d'une police plus moderne (optionnel, sinon utilise la police par défaut) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    /* Une police propre et lisible */
+    font-family: 'Poppins', sans-serif;
+    
+    /* Un dégradé de fond qui rappelle le ciel (bleu vers bleu clair) */
+    background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+    
+    /* Pour s'assurer que le fond couvre toute la hauteur de l'écran */
+    min-height: 100vh;
+    margin: 0;
+    
+    /* Centrage du contenu principal */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    color: #333;
+}
+
+h1 {
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+/* Style de la zone de saisie (Label, Input, Bouton) */
+label {
+    font-weight: 600;
+    color: #fff;
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+input#nouvelleVille {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+input#nouvelleVille:focus {
+    transform: scale(1.05);
+}
+
+button#envoi {
+    padding: 10px 25px;
+    margin-top: 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 25px;
+    background-color: #ff6b6b; /* Un rouge/rose pour contraster avec le bleu */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: background 0.3s, transform 0.2s;
+}
+
+button#envoi:hover {
+    background-color: #ee5253;
+    transform: translateY(-2px);
+}
+
+/* La carte de résultat météo */
+#recuperation {
+    background-color: rgba(255, 255, 255, 0.9); /* Blanc légèrement transparent */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    width: 300px; /* Largeur fixe pour faire une jolie carte */
+    text-align: center;
+    
+    /* Animation d'apparition fluide */
+    transition: all 0.3s ease-in-out;
+    
+    /* Typographie à l'intérieur de la carte */
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Si le div est vide (au chargement), on peut le cacher ou lui donner une taille min */
+#recuperation:empty {
+    display: none;
+}
+
+/* Cibler l'image générée par le JS à l'intérieur */
+#recuperation img {
+    margin-top: 15px;
+    width: 80px;
+    height: auto;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+/* Mise en gras automatique des labels (Ville, Latitude, etc.) 
+   Note : Comme ton JS injecte du texte brut, on ne peut pas cibler les mots clés 
+   spécifiquement sans changer le JS, mais on peut styliser tout le bloc. */
